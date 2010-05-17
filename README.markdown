@@ -1,0 +1,31 @@
+# DDBadgeViewCell for UITableView
+
+DDBadgeViewCell is a UITableViewCell subclass that has a customizable badge view on the right. With fast Quartz 2D path drawing and blending, one can use this with very large data set and still keep great performance when scrolling.
+
+![](http://farm4.static.flickr.com/3390/4613151725_078f60156e_o.png)
+
+## Requirement
+
+1. iPhone SDK 3.1 or later (Sample project was created in iPhone SDK 4).
+2. QuartzCore.framework should be included in your project.
+
+## Usage
+
+Like regular UITableViewCell, you create them in - (UITableViewCell *)tableView:cellForRowAtIndexPath:
+
+    DDBadgeViewCell *cell = (DDBadgeViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[DDBadgeViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    }
+    
+And configure the cell through its properties below:
+
+	cell.summary = @"Summary";
+	cell.detail = @"Detail text goes here";
+	cell.badgeText = @"Badge Text";
+	cell.badgeColor = [UIColor orangeColor];
+	cell.badgeHighlightedColor = [UIColor lightGrayColor];
+	
+## License
+
+DDBadgeViewCell is licensed under MIT license.
